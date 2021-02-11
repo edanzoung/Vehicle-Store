@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} {{ title }} {% endblock %}
+{% block pagetitle %}{{ title }}{% endblock %}
+{% block content %}
+
+<div class="container">
+<!--Contact form-->
+	<div style="padding:0">
+		<p>
+			Veuillez remplir ce formulaire si vous souhaitez commander ce vehicule 
+            <span style="color: crimson">{{ cars.marque_vehicule}} {{ cars.modele_vehicule}}</span> .<br>
+Un de nos collaborateurs se fera un plaisir de vous contacter directement dans les plus brefs délais.  
+		</p>
+        <hr>
+    <div class="container col-sm-12 text-left">
+            
+        <span class="fa fa-whatsapp">: +226 70516127</span><br>
+        <span class="fa fa-phone">: +226 70516127</span><br>
+        <span class="fa fa-envelope">: elkanazoungrana@gmail.com</span><br>
+        <span class="fa fa-map">: Quartier,Avenue xxxxxxxxxxxxxxx</span>
+        
+    </div>
+        
+        <hr>
+        <div class="album py-5 bg-dark" style="border-radius: 20px;color: aliceblue">
+    <div class="container col-sm text-left">
+        
+        <form id="contact-form" method="post" action="" role="form">
+            {% csrf_token %}
+        <div class="messages"></div>
+
+        <div class="controls">
+
+          <div class="row">
+            <div class="col-md-6">
+
+                {{ form.prenom|as_crispy_field }}
+
+            </div>
+            <div class="col-md-6">
+
+                {{ form.nom_de_famille|as_crispy_field }}
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+
+                {{ form.email|as_crispy_field }}
+
+            </div>
+            <div class="col-md-6">
+
+                {{ form.numero|as_crispy_field }}
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+
+                {{ form.pays|as_crispy_field }}
+
+         </div>
+
+            <div class="col-md-6">
+
+                {{ form.vehicule|as_crispy_field }}
+
+            </div>
+            <div class="col-md-12 mb-2">
+              <input type="submit" class="btn btn-sm btn-outline-success btn-send" value="ENVOYER">
+            </div>
+          </div>
+         
+        </div>
+
+        </form>
+
+      </div>
+</div>
+</div>
+</div>
+            
+
+{% endblock %}

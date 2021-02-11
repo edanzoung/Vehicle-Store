@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+{% load static %}
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/bootstrap.min.css' %}">
+    
+    
+    <title>{% block title %}{% endblock %}</title>
+    
+    <style>
+    #id_message {
+    height: 500px;}
+    </style>
+
+</head>
+
+<body>
+    
+
+<div class="wrapper d-flex align-items-stretch">
+    
+    <nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+	  		<h1><a href="index.html" class="logo">G-A-R-T</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+	            <a  href="{% url 'index' %}"><span class="fa fa-th-large mr-3"></span> ACCUEIL</a>
+	          </li>
+	          <li>
+	          <a  href="{% url 'admin:index' %}"><span class="fa fa-users mr-3"></span> ADMIN</a>
+	          </li>
+	          <li>
+              <a  href="{% url 'vehicules' %}"><span class="fa fa-car mr-3"></span> VEHICULES</a>
+	          </li>
+                <li>
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <span class="fa fa-certificate mr-3"></span>TOP MARQUES</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+  
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=AUDI">AUDI</a>
+                </li>
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=BMW">BMW</a>
+                </li>
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=GMC">GMC</a>
+                </li>               
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=HONDA">HONDA</a>
+                </li>
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=HYUNDAI">HYUNDAI</a>
+                </li>
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=MERCEDES-BENZ">MERCEDES-BENZ</a>
+                </li>
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=NISSAN">NISSAN</a>
+                </li>
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=PEUGEOT">PEUGEOT</a>
+                </li>
+                <li>
+                    <a href="{% url 'vehicules'  %}?q=TOYOTA">TOYOTA</a>
+                </li>
+
+	            </ul>
+	          </li>
+	          <li>
+              <a  href="{% url 'nos-services' %}"><span class="fa fa-check-square-o mr-3"></span> NOS SERVICES</a>
+	          </li>
+	          <li>
+              <a  href="{% url 'about' %}"><span class="fa fa-exclamation-circle mr-3"></span> A PROPOS</a>
+	          </li>
+	          <li>
+              <a  href="{% url 'contact' %}"><span class="fa fa-comments-o mr-3"></span> NOUS CONTACTER</a>
+	          </li>
+        </ul>
+<div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> |<br> General Auto Romaric Transit |<br> Tout droit réservé </p><hr>
+                    <p>
+                    This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+    	</nav>
+    <div class="mb-5">
+						 
+            </div><hr>
+
+	        
+    
+   
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-sm-5 pt-5 m-2">
+        <h5 class="mb-8 text-right">{% block pagetitle %}{% endblock %}</h5>
+          
+           {% block content %}{% block message %}{% endblock %}{% endblock %}
+      </div>
+		</div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    
+   
+    
+
+</body>
+
+</html>
