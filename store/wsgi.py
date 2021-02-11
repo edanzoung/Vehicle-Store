@@ -12,5 +12,4 @@ from whitenoise.django import DjangoWhiteNoise
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "store.settings")
 
-app = get_wsgi_application()
-application = DjangoWhiteNoise(app)
+application = get_wsgi_application()
