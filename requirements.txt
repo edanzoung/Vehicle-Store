@@ -3,4 +3,5 @@ gunicorn==20.0.4
 Pillow==8.0.0
 six==1.15.0
 sqlparse==0.3.1
+crispy==0.5.5
 
