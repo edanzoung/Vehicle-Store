@@ -24,12 +24,11 @@ SECRET_KEY = 'y*qvrgdh+%l4q!)&eg_rds0d=8jv@drqc1yzqp9k0ym^!24cq-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["gart-bf.herokuapp.com"]
 
 # Application definition
 
 INSTALLED_APPS = [
-    #'admin_black.apps.AdminBlackConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,10 +122,12 @@ USE_TZ = True
 
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-#STATIC_ROOT= os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT= os.path.join(BASE_DIR, "staticfiles")
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_URL = "/static/"
-#STATICFILES_DIRS= [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS= (
+    os.path.join(BASE_DIR, "static"),
+)
 
 
 
@@ -139,21 +140,6 @@ STATIC_URL = "/static/"
 #EMAIL_HOST_PASSWORD = "Zoungrana@1992"
 #EMAIL_PORT = "587"
 
-#SPARKPOST_API_KEY = "bbf0b518be0fb4489091f9b278c0f9ec5dfb37d1"
-#SPARKPOST_BASE_URI = 'api.sparkpost.com'
-#EMAIL_BACKEND = "sparkpost.django.email_backend.SparkPostEmailBackend"
-
-SPARKPOST_OPTIONS = {
-    'track_opens': False,
-    'track_clicks': False,
-    'transactional': True,}
-
 SENDGRID_API_KEY="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"
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
-
-# Toggle sandbox mode (when running in DEBUG mode)
-SENDGRID_SANDBOX_MODE_IN_DEBUG=True
-
-# echo to stdout or any other file-like object that is passed to the backend via the stream kwarg.
-SENDGRID_ECHO_TO_STDOUT=True
