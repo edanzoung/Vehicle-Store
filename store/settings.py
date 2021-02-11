@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y*qvrgdh+%l4q!)&eg_rds0d=8jv@drqc1yzqp9k0ym^!24cq-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["gart-bf.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -120,16 +120,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT= os.path.join(BASE_DIR, "staticfiles")
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_URL = "/static/"
-STATICFILES_DIRS= (
-    os.path.join(BASE_DIR, "static"),
-)
-
-
+STATICFILES_DIRS= [os.path.join(BASE_DIR, "static")]
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
