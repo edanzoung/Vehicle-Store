@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y*qvrgdh+%l4q!)&eg_rds0d=8jv@drqc1yzqp9k0ym^!24cq-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["gart-bf.herokuapp.com"]
 
