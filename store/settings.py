@@ -137,9 +137,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #EMAIL_HOST_PASSWORD = "Zoungrana@1992"
 #EMAIL_PORT = "587"
 
-SENDGRID_API_KEY="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"
-EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+#SENDGRID_API_KEY="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"
+#EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+#SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=500)
