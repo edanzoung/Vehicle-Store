@@ -5,8 +5,6 @@ from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from app.forms import ContactForm , Commande
 from django.core.mail import send_mail, BadHeaderError
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
 
@@ -89,15 +87,11 @@ def nous_contacter(request):
 
             message = "\n".join(body.values())
 
-            post = Mail( from_email='elkanaboss@yahoo.fr', to_emails='elkanazoungrana@gmail.com',
-                            subject='Sending with Twilio sendgrid-python library',
-                            html_content=message)
             try:
-                sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
-                sg.send(post)
-                return redirect ("success")
+                 send_mail( subject,message,'elkanazoungrana@gmail.com',['elkanazoungrana@gmail.com'])
+                return redirect ("success-commande")
             except Exception as e:
-                return HttpResponse(e)            
+                return HttpResponse(e)           
       
     form = ContactForm()
     return render(request, "contact.html",{'title' : title,'form':form})
@@ -120,13 +114,8 @@ def commander(request,id):
                     'vehicule':form.cleaned_data['vehicule']}
 
             message = "\n".join(body.values())
-
-            _message = Mail( from_email='elkanaboss@yahoo.fr', to_emails='elkanazoungrana@gmail.com',
-                            subject='Sending with Twilio sendgrid-python library',
-                            html_content=message)
             try:
-                sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
-                sg.send(_message)
+                 send_mail( subject,message,'elkanazoungrana@gmail.com',['elkanazoungrana@gmail.com'])
                 return redirect ("success-commande")
             except Exception as e:
                 return HttpResponse(e)
