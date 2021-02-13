@@ -88,7 +88,7 @@ def nous_contacter(request):
             message = "\n".join(body.values())
 
             try:
-                send_mail( subject,message,'elkanazoungrana@gmail.com',['elkanazoungrana@gmail.com'])
+                #send_mail( subject,message,'elkanazoungrana@gmail.com',['elkanazoungrana@gmail.com'])
                 return redirect ("success")
             except Exception as e:
                 return HttpResponse(e)           
@@ -115,7 +115,7 @@ def commander(request,id):
 
             message = "\n".join(body.values())
             try:
-                send_mail( subject,message,'elkanazoungrana@gmail.com',['elkanazoungrana@gmail.com'])
+                #send_mail( subject,message,'elkanazoungrana@gmail.com',['elkanazoungrana@gmail.com'])
                 return redirect ("success-commande")
             except Exception as e:
                 return HttpResponse(e)
