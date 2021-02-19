@@ -7,7 +7,7 @@ date_now="{0}/{1}/{2}".format(str(datetime.utcnow().day),
                               str(datetime.utcnow().month),
                               str(datetime.utcnow().year))
 # Create your models here.
-class Vehicules(models.Model):
+class Vehicule(models.Model):
     MARQUES = (
         ('ACURA', 'ACURA'),
         ('ALPHA-ROMEO', 'ALPHA-ROMEO'),

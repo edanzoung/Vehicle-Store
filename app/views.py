@@ -14,36 +14,36 @@ from django.http import HttpResponse, HttpResponseRedirect
 def home(request):
     title="ACCUEIL"
     return render(request, "index.html",
-                  {'cars' : models.Vehicules.objects.all(),'title' : title})
+                  {'cars' : models.Vehicule.objects.all(),'title' : title})
 
 def menu(request):
-    marques = models.Vehicules.objects.all()
+    marques = models.Vehicule.objects.all()
     return render(request, "base.html",{'marques': marques,'len_marque': range(len(marques))})
 
 def vehicule_detail(request,id):
     title="DETAILS"
     
     return render(request, "details-vehicule.html",
-                  {'cars' : models.Vehicules.objects.get(id=id),'title' : title})
+                  {'cars' : models.Vehicule.objects.get(id=id),'title' : title})
 
 def vehicules(request):
     title="NOS VEHICULES"
     
-    vehicle_list = models.Vehicules.objects.all()
+    vehicle_list = models.Vehicule.objects.all()
 
     query = request.GET.get('q')
     
     if query is not None:
-        vehicle_list = models.Vehicules.objects.filter(
+        vehicle_list = models.Vehicule.objects.filter(
             Q(marque_vehicule__icontains=query) | Q(modele_vehicule__icontains=query) |
             Q(annee_vehicule__icontains=query) | Q(couleur_vehicule__icontains=query) |
             Q(etat_vehicule__icontains=query) | Q(carburant_vehicule__icontains=query) |
             Q(compteur_vehicule__icontains=query) | Q(transmission_vehicule__icontains=query)).distinct()
     elif query is None:
-        vehicle_list = models.Vehicules.objects.all()
+        vehicle_list = models.Vehicule.objects.all()
         
 
-    paginator = Paginator(vehicle_list, 12) # Show 12 vehicles per page.    
+    paginator = Paginator(vehicle_list, 6) # Show 6 vehicles per page.    
     page_number = request.GET.get('page')
     
     try:
@@ -56,7 +56,7 @@ def vehicules(request):
     precedent_num=int(page_obj.number)-1
     suivant_num=int(page_obj.number)+1
 
-    context = {'cars' : models.Vehicules.objects.all(),'list_vehicle_size':int(len(vehicle_list)),
+    context = {'cars' : models.Vehicule.objects.all(),'list_vehicle_size':int(len(vehicle_list)),
                    'page_obj': page_obj,'title' : title,'precedent_num':precedent_num,'suivant_num':suivant_num}
     return render(request, "vehicules.html", context)
 
@@ -89,7 +89,7 @@ def nous_contacter(request):
 
             try:
                 #send_mail( subject,message,'elkanazoungrana@gmail.com',['elkanazoungrana@gmail.com'])
-                return redirect ("success")
+                return redirect ("success-commande")
             except Exception as e:
                 return HttpResponse(e)           
       
@@ -98,7 +98,7 @@ def nous_contacter(request):
 
 def commander(request,id):
     title="COMMANDES"
-    cars= models.Vehicules.objects.get(id=id)
+    cars= models.Vehicule.objects.get(id=id)
     
     if request.method == 'POST':
         form = Commande(request.POST)

@@ -261,7 +261,7 @@ class ContactForm(forms.Form):
 	email = forms.EmailField(max_length = 200)
 	numero = forms.CharField(widget = forms.TextInput,max_length = 50)
 	pays = forms.CharField(widget = forms.Select(choices=PAYS),max_length = 50)
-	message = forms.CharField(widget = forms.Textarea(attrs={'cols':80, 'rows': 20}), max_length = 5000)
+	message = forms.CharField(widget = forms.Textarea(attrs={'cols':80, 'rows': 5}), max_length = 5000)
 
 class Commande(forms.Form):
 	prenom = forms.CharField(widget = forms.TextInput,max_length = 100)

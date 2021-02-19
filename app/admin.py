@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import Vehicules
+from app.models import Vehicule
 
 # Register your models here.
 
@@ -10,5 +10,5 @@ class Custom_Admin(admin.ModelAdmin):
     list_filter=()
     fieldsets=()
 
-admin.site.register(Vehicules,Custom_Admin)
+admin.site.register(Vehicule,Custom_Admin)
 
