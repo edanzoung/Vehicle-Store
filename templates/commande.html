@@ -5,82 +5,91 @@
 {% block content %}
 
 <div class="container">
-<!--Contact form-->
-	<div style="padding:0">
-		<p>
-			Veuillez remplir ce formulaire si vous souhaitez commander ce vehicule 
-            <span style="color: crimson">{{ cars.marque_vehicule}} {{ cars.modele_vehicule}}</span> .<br>
-Un de nos collaborateurs se fera un plaisir de vous contacter directement dans les plus brefs délais.  
-		</p>
-        <hr>
-    <div class="container col-sm-12 text-left">
-            
-        <span class="fa fa-whatsapp">: +226 70516127</span><br>
-        <span class="fa fa-phone">: +226 70516127</span><br>
-        <span class="fa fa-envelope">: elkanazoungrana@gmail.com</span><br>
-        <span class="fa fa-map">: Quartier,Avenue xxxxxxxxxxxxxxx</span>
-        
-    </div>
-        
-        <hr>
-        <div class="album py-5 bg-dark" style="border-radius: 20px;color: aliceblue">
-    <div class="container col-sm text-left">
-        
-        <form id="contact-form" method="post" action="" role="form">
-            {% csrf_token %}
-        <div class="messages"></div>
+    <!--Contact form-->
+    <div style="padding:0">
+        <h2 class="colorlib-heading animate-box" style="color:cadetblue">Commandes</h2>
+        <p class="animate-box">
+            Nos contacts
+        </p>
+        <div class="container col-sm-12 text-left animate-box">
 
-        <div class="controls">
+            <span class="fa fa-whatsapp">: +226 71181914</span><br>
+            <span class="fa fa-phone">: +226 68590587</span><br>
+            <span class="fa fa-phone">: +226 64674444</span><br>
+            <span class="fa fa-phone">: 0032 486454 181</span><br>
+            <span class="fa fa-envelope">: iromaric23@gmail.com</span><br>
+            <!--<span class="fa fa-map">: koulba ,Avenue kouame N'krouma</span>-->
 
-          <div class="row">
-            <div class="col-md-6">
-
-                {{ form.prenom|as_crispy_field }}
-
-            </div>
-            <div class="col-md-6">
-
-                {{ form.nom_de_famille|as_crispy_field }}
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-
-                {{ form.email|as_crispy_field }}
-
-            </div>
-            <div class="col-md-6">
-
-                {{ form.numero|as_crispy_field }}
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-
-                {{ form.pays|as_crispy_field }}
-
-         </div>
-
-            <div class="col-md-6">
-
-                {{ form.vehicule|as_crispy_field }}
-
-            </div>
-            <div class="col-md-12 mb-2">
-              <input type="submit" class="btn btn-sm btn-outline-success btn-send" value="ENVOYER">
-            </div>
-          </div>
-         
         </div>
+        <hr>
+        <p class="animate-box">
+            Veuillez remplir ce formulaire si vous souhaitez commander ce vehicule
+            <span style="color: limegreen">{{ cars.marque_vehicule}} {{ cars.modele_vehicule}}</span> .<br>
+            Un de nos collaborateurs se fera un plaisir de vous contacter directement dans les plus brefs délais.
+        </p>
+        <hr>
+        <div class="album py-5" style="border-radius: 20px;color: aliceblue">
+            <div class="container col-sm text-left">
 
-        </form>
+                <form id="contact-form" method="post" action="" role="form">
+                    {% csrf_token %}
+                    <div class="messages"></div>
 
-      </div>
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.prenom|as_crispy_field }}
+
+                            </div>
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.nom_de_famille|as_crispy_field }}
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.email|as_crispy_field }}
+
+                            </div>
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.numero|as_crispy_field }}
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.pays|as_crispy_field }}
+
+                            </div>
+
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.vehicule|as_crispy_field }}
+
+                            </div>
+                            <div class="col-md-6 ">
+                                <input type="submit" class="btn btn-success btn-send" value="ENVOYER">
+                                <form method="POST" action="javascript:window.history.go(-1)">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">RETOUR</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-</div>
-            
+
 
 {% endblock %}

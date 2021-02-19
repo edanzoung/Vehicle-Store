@@ -5,84 +5,90 @@
 {% block content %}
 
 <div class="container">
-<!--Contact form-->
-	<div style="padding:0">
-		<h1>Laisser nous un message</h1>
-		<p>
-			Veuillez remplir ce formulaire si vous avez des questions.<br>
-Un de nos collaborateurs se fera un plaisir de vous contacter directement et de répondre à vos questions dans les plus brefs délais.  
-		</p>
-        <hr>
-    <div class="container col-sm-12 text-left">
-            
-        <span class="fa fa-whatsapp">: +226 70516127</span><br>
-        <span class="fa fa-phone">: +226 70516127</span><br>
-        <span class="fa fa-envelope">: elkanazoungrana@gmail.com</span><br>
-        <span class="fa fa-map">: koulba ,Avenue kouame N'krouma</span>
-        
-    </div>
-        
-        <hr>
-<div class="album py-5 bg-dark" style="border-radius: 20px;color: aliceblue">
-        
-    <div class="container col-sm text-left">
-        
-        <form id="contact-form" method="post" action="" role="form">
-            {% csrf_token %}
-        <div class="messages"></div>
+    <!--Contact form-->
+    <div style="padding:0">
+        <h2 class="colorlib-heading animate-box" style="color:cadetblue">Laisser nous un message</h2>
 
-        <div class="controls">
+        <p class="animate-box">Nos contacts</p>
 
-          <div class="row">
-            <div class="col-md-6">
+        <div class="container col-sm-12 text-left animate-box">
 
-                {{ form.prenom|as_crispy_field }}
+            <span class="fa fa-whatsapp">: +226 71181914</span><br>
+            <span class="fa fa-phone">: +226 68590587</span><br>
+            <span class="fa fa-phone">: +226 64674444</span><br>
+            <span class="fa fa-phone">: 0032 486454 181</span><br>
+            <span class="fa fa-envelope">: iromaric23@gmail.com</span><br>
+            <hr>
+            <!--<span class="fa fa-map">: koulba ,Avenue kouame N'krouma</span>-->
 
-            </div>
-            <div class="col-md-6">
-
-                {{ form.nom_de_famille|as_crispy_field }}
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-
-                {{ form.email|as_crispy_field }}
-
-            </div>
-            <div class="col-md-6">
-
-                {{ form.numero|as_crispy_field }}
-
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-6">
-
-                {{ form.pays|as_crispy_field }}
-
-         </div>
-            <div class="col-md-6">
-
-                {{ form.message|as_crispy_field }}
-
-            </div>
-            <div class="col-md-12">
-              <input type="submit" class="btn btn-success btn-send" value="ENVOYER">
-            </div>
-          </div>
-         
         </div>
 
-        </form>
 
-      </div>
+        <p class="animate-box">
+            Veuillez remplir ce formulaire si vous avez des questions.<br>
+            Un de nos collaborateurs se fera un plaisir de vous contacter directement et de répondre à vos questions dans les plus brefs délais.
+        </p>
 
+        <div class="album py-5" style="border-radius: 20px;color: aliceblue">
+
+            <div class="container col-sm text-left">
+
+                <form id="contact-form" method="post" action="" role="form">
+                    {% csrf_token %}
+                    <div class="messages"></div>
+
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.prenom|as_crispy_field }}
+
+                            </div>
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.nom_de_famille|as_crispy_field }}
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.email|as_crispy_field }}
+
+                            </div>
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.numero|as_crispy_field }}
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.pays|as_crispy_field }}
+
+                            </div>
+                            <div class="col-md-6 animate-box">
+
+                                {{ form.message|as_crispy_field }}
+
+                            </div>
+                            <div class="col-md-6 ">
+                                <input type="submit" class="btn btn-success btn-send" value="ENVOYER">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
 </div>
-</div>
-</div>
-            
+
 
 {% endblock %}
