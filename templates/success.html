@@ -3,18 +3,18 @@
 {% block content %}
 
 <div class="container">
-<div class="jumbotron text-center" style="padding: 0">
-  <h1 class="display-5">Envoyé!</h1>
-  <p class="lead"><strong>Merci d'avoir choisi G-A-R-T</strong><br> Un de nos collaborateurs se fera un plaisir de vous contacter directement et de répondre à vos questions dans les plus brefs délais.</p>
-  <hr>
-  <p>
-    Des questions? <a href="{% url 'contact' %}">Contactez nous</a>
-  </p>
-  <p class="lead">
-    <a class="btn btn-primary btn-sm" href="{% url 'index' %}" role="button">Continuez à la page d'accueil</a>
-  </p>
+    <div class="jumbotron text-center" style="padding: 0;background-color: #333">
+        <h1 class="display-5">Envoyé!</h1>
+        <p class="lead"><strong>Merci d'avoir choisi G-A-R-T</strong><br> Un de nos collaborateurs se fera un plaisir de vous contacter directement et de répondre à vos questions dans les plus brefs délais.</p>
+        <hr>
+        <p>
+            Des questions? <a href="{% url 'contact' %}">Contactez nous</a>
+        </p>
+        <p class="lead">
+            <a class="btn btn-primary btn-sm" href="{% url 'index' %}" role="button">Continuez à la page d'accueil</a>
+        </p>
+    </div>
 </div>
-</div>
-            
+
 
 {% endblock %}
