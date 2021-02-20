@@ -89,7 +89,7 @@ def nous_contacter(request):
 
             try:
                 #send_mail( subject,message,'elkanazoungrana@gmail.com',['elkanazoungrana@gmail.com'])
-                return redirect ("success-commande")
+                return redirect ("success")
             except Exception as e:
                 return HttpResponse(e)           
       
